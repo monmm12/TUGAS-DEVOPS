@@ -1,0 +1,15 @@
+# Gunakan base image yang sesuai dengan bahasa atau lingkungan yang Anda butuhkan
+FROM node:16
+
+# Pindahkan file proyek Anda ke dalam container
+WORKDIR /app
+COPY . .
+
+# Install dependensi proyek (contoh: untuk Node.js)
+RUN npm install
+
+# Expose port yang akan digunakan oleh proyek Anda
+EXPOSE 8000
+
+# Perintah untuk menjalankan aplikasi Anda
+CMD ["npm", "start"]
